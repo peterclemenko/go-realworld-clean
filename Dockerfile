@@ -6,6 +6,7 @@ RUN mkdir -p $GOPATH/src/github.com/err0r500/go-realworld-clean
 ADD . $GOPATH/src/github.com/err0r500/go-realworld-clean
 WORKDIR $GOPATH/src/github.com/err0r500/go-realworld-clean
 RUN go get -u github.com/golang/dep/cmd/dep
+RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 RUN dep ensure -vendor-only
 
 # Build
